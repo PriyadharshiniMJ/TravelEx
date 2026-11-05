@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "travelex"
+version = "0.1.0"
+requires-python = ">=3.11"
+# Direct dependencies, within the major versions TravelEx is tested on. Exact versions: requirements.lock
+dependencies = [
+    "langgraph>=1.2,<2",
+    "langgraph-checkpoint-sqlite>=3.1,<4",
+    "langchain>=1.4,<2",
+    "langchain-core>=1.7,<2",
+    "langsmith>=0.14,<1",
+    "tavily-python>=0.8,<1",
+    "streamlit>=1.66,<2",
+    "pydantic>=2.14,<3",
+    "python-dotenv>=1.2,<2",
+    "markdown>=3.11,<4",
+    "pycountry>=26",
+]
+
+[project.optional-dependencies]
+openai = ["langchain-openai>=1.7,<2"]
+anthropic = ["langchain-anthropic>=1,<2"]
+dev = ["pytest>=9.1,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

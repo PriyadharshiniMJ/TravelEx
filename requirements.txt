@@ -1,0 +1,12 @@
+langgraph
+langgraph-checkpoint-sqlite
+langchain
+langchain-core
+langsmith
+tavily-python
+streamlit
+pydantic>=2
+python-dotenv
+pytest
+markdown
+pycountry
